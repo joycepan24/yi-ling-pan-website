@@ -1,0 +1,28 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const navigation = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+];
+---
+
+<header class="site-header">
+  <div class="site-shell site-header__inner">
+    <a class="site-name" href="/">YI-LING PAN</a>
+    <nav aria-label="Primary navigation">
+      <ul class="site-nav">
+        {navigation.map((item) => (
+          <li>
+            <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

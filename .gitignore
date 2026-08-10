@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Astro build and cache output
+dist/
+.astro/
+
+# Operating-system and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+.cache/
+.temp/
+coverage/
+
+# Local environment values
+.env
+.env.local
+.env.*.local

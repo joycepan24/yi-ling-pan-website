@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const focusAreas = [
+  {
+    title: 'Teaching Reflections',
+    description: 'Notes from the classroom and the questions that shape my practice.',
+  },
+  {
+    title: 'Theory & Practice',
+    description: 'Connecting educational ideas with everyday teaching experience.',
+  },
+  {
+    title: 'Teaching Resources',
+    description: 'Materials, notes, and tools for learning and teaching.',
+  },
+];
+---
+
+<BaseLayout
+  title="Bilingual educator"
+  description="Yi Ling Pan is a bilingual educator sharing teaching reflections, theory and practice, and teaching resources."
+>
+  <section class="intro site-shell" aria-labelledby="page-title">
+    <p class="eyebrow">Bilingual educator</p>
+    <h1 id="page-title">Helping learners bring language into everyday life.</h1>
+  </section>
+
+  <section class="focus-section site-shell" aria-label="Focus areas">
+    <ol class="focus-list">
+      {focusAreas.map((area, index) => (
+        <li>
+          <p class="focus-number" aria-hidden="true">0{index + 1}</p>
+          <h3>{area.title}</h3>
+          <p>{area.description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
