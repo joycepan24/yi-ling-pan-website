@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const articles = (await getCollection('articles', ({ data }) => data.status === 'published'))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+
+const dateFormatter = new Intl.DateTimeFormat('en', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+});
+---
+
+<BaseLayout title="Writing" description="Articles and reflections by Yi Ling Pan.">
+  <section class="writing-index site-shell" aria-labelledby="page-title">
+    <header class="page-heading">
+      <p class="eyebrow">Writing</p>
+      <h1 id="page-title">Writing</h1>
+    </header>
+
+    <ol class="article-list">
+      {articles.map((article) => (
+        <li lang={article.data.language}>
+          <p class="article-date">
+            <time datetime={article.data.publishedAt.toISOString()}>
+              {dateFormatter.format(article.data.publishedAt)}
+            </time>
+          </p>
+          <h2><a href={`/articles/${article.data.slug}/`}>{article.data.title}</a></h2>
+          <p>{article.data.description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>

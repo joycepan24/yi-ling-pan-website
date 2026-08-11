@@ -372,6 +372,97 @@ h3 {
   margin-top: 0.4rem;
 }
 
+.writing-index,
+.article {
+  max-width: calc(var(--reading-width) + (var(--page-gutter) * 2));
+  padding-block: clamp(5rem, 12vw, 8rem);
+}
+
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-list li {
+  border-bottom: 1px solid var(--border);
+  padding-block: 1.75rem;
+}
+
+.article-list li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.article-list h2 {
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  margin: 0.35rem 0 0.65rem;
+}
+
+.article-list h2 a {
+  text-decoration: none;
+}
+
+.article-list h2 a:hover {
+  text-decoration: underline;
+}
+
+.article-list li > p:last-child,
+.article-description {
+  color: var(--text-muted);
+}
+
+.article-list li > p:last-child {
+  margin-bottom: 0;
+}
+
+.article-date {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.article-header {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+}
+
+.article-header h1 {
+  margin-top: 0.75rem;
+}
+
+.article-description {
+  font-size: 1.12rem;
+  margin: 1.35rem 0 1rem;
+  max-width: 38rem;
+}
+
+.article-body {
+  font-size: 1.06rem;
+}
+
+.article-body > * + * {
+  margin-top: 1.4rem;
+}
+
+.article-body h2 {
+  margin-bottom: 0;
+  padding-top: 1.75rem;
+}
+
+.article-body h3 {
+  margin-bottom: 0;
+  padding-top: 1.25rem;
+}
+
+.article-body li + li {
+  margin-top: 0.4rem;
+}
+
+.article-body code {
+  font-size: 0.92em;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--text-muted);

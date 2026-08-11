@@ -1,0 +1,37 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  language: string;
+}
+
+const { title, description, publishedAt, updatedAt, language } = Astro.props;
+const dateFormatter = new Intl.DateTimeFormat(language, {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="article site-shell" lang={language}>
+    <header class="article-header">
+      <p class="eyebrow"><a href="/articles/">Writing</a></p>
+      <h1>{title}</h1>
+      <p class="article-description">{description}</p>
+      <p class="article-date">
+        Published <time datetime={publishedAt.toISOString()}>{dateFormatter.format(publishedAt)}</time>
+        {updatedAt && (
+          <> · Updated <time datetime={updatedAt.toISOString()}>{dateFormatter.format(updatedAt)}</time></>
+        )}
+      </p>
+    </header>
+
+    <div class="article-body">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
