@@ -29,6 +29,7 @@ Codex is the primary implementation agent. Claude is primarily an architecture, 
 
 ## Content rules
 
+- When creating or editing website articles, follow `docs/WRITING-STYLE.md` as the source of truth for the author's writing voice.
 - Article and resource pages must be written in Markdown or MDX with validated front matter.
 - Use stable, human-readable slugs. Do not change a published slug without preserving a redirect strategy.
 - Put downloadable files in the designated public asset location; use descriptive, stable filenames and add meaningful metadata in the corresponding content entry.
