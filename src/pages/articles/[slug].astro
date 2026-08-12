@@ -18,7 +18,7 @@ const { Content } = await render(article);
 <ArticleLayout
   title={article.data.title}
   description={article.data.description}
-  publishedAt={article.data.publishedAt}
+  publishedAt={article.data.publishedAt!}
   updatedAt={article.data.updatedAt}
   language={article.data.language}
 >

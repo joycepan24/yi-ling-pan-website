@@ -7,12 +7,18 @@ const articles = defineCollection({
     title: z.string().min(1),
     description: z.string().min(1),
     status: z.enum(['draft', 'published', 'archived']),
-    publishedAt: z.coerce.date(),
+    publishedAt: z.coerce.date().optional(),
     slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     language: z.string().min(2),
     updatedAt: z.coerce.date().optional(),
     tags: z.array(z.string()).optional(),
-  }),
+  }).refine(
+    ({ status, publishedAt }) => status !== 'published' || publishedAt !== undefined,
+    {
+      message: 'Published articles require a publication date.',
+      path: ['publishedAt'],
+    },
+  ),
 });
 
 export const collections = { articles };
