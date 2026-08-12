@@ -36,6 +36,26 @@ Codex is the primary implementation agent. Claude is primarily an architecture, 
 - Draft content must be excluded from production publication by an explicit status/date rule.
 - Use plain language, meaningful headings, descriptive link text, and alt text that conveys the image's purpose.
 
+## Visual workflow
+
+Before proposing or making visual or layout changes, read `docs/VISUAL-DIRECTION.md` and inspect the relevant existing layouts, components, and styles. Visual changes must follow the established design decisions, and a new visual system must not be introduced without discussion and explicit approval. Content remains the primary focus.
+
+Preserve:
+
+- A calm editorial feeling
+- Typography-first design
+- Generous whitespace
+- Restrained visual elements
+- The organic shape language when it is appropriate to the composition
+
+Avoid:
+
+- Generic blog layouts
+- Unnecessary cards
+- Decorative images without meaning
+- Excessive UI elements
+- Startup- or marketing-style patterns
+
 ## Implementation principles
 
 - Prefer static generation and standard HTML over client-side JavaScript.
