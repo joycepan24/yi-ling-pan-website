@@ -184,6 +184,26 @@ a:focus-visible {
   z-index: -1;
 }
 
+.intro-portrait {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  right: clamp(4rem, 9.5vw, 9.5rem);
+  top: clamp(6.5rem, 9.5vw, 8.5rem);
+  width: clamp(8.75rem, 12.5vw, 10.75rem);
+  z-index: 3;
+}
+
+.intro-portrait img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 27%;
+  width: 100%;
+}
+
 .eyebrow,
 .focus-number,
 .location {
@@ -523,5 +543,15 @@ h3 {
 
   .intro h1::after {
     display: none;
+  }
+
+  .intro-portrait {
+    margin-left: clamp(0.75rem, 5vw, 2.25rem);
+    margin-top: 2.85rem;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: min(44vw, 10rem);
+    z-index: 3;
   }
 }
