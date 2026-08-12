@@ -459,6 +459,47 @@ h3 {
 
 .writing-index {
   padding-block: clamp(5rem, 12vw, 8rem);
+  position: relative;
+}
+
+.writing-index .page-heading {
+  isolation: isolate;
+  min-height: clamp(13rem, 24vw, 18rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.writing-index__shape {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.writing-index__shape--one {
+  border-radius: 54% 46% 42% 58% / 43% 57% 43% 57%;
+  background: var(--lavender);
+  height: clamp(8rem, 15vw, 13rem);
+  right: clamp(0rem, 5vw, 4rem);
+  top: clamp(-3rem, -2vw, -1rem);
+  width: clamp(8rem, 15vw, 13rem);
+}
+
+.writing-index__shape--two {
+  border-radius: 56% 44% 51% 49% / 45% 57% 43% 55%;
+  background: var(--sage);
+  bottom: clamp(-3rem, -2vw, -1rem);
+  height: clamp(5rem, 8vw, 7rem);
+  right: clamp(12rem, 25vw, 23rem);
+  width: clamp(5rem, 8vw, 7rem);
+}
+
+.writing-index__shape--three {
+  border-radius: 45% 55% 52% 48% / 56% 43% 57% 44%;
+  background: var(--butter);
+  bottom: 1.5rem;
+  height: clamp(3rem, 5vw, 4.5rem);
+  right: clamp(5rem, 14vw, 13rem);
+  width: clamp(3rem, 5vw, 4.5rem);
 }
 
 .article-list {
@@ -644,5 +685,23 @@ h3 {
     top: auto;
     width: min(44vw, 10rem);
     z-index: 3;
+  }
+
+  .writing-index .page-heading {
+    min-height: 15rem;
+  }
+
+  .writing-index__shape--one {
+    right: -3rem;
+  }
+
+  .writing-index__shape--two {
+    bottom: -2rem;
+    right: 55%;
+  }
+
+  .writing-index__shape--three {
+    bottom: 2.25rem;
+    right: 24%;
   }
 }
