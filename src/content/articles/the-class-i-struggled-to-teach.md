@@ -1,7 +1,8 @@
 ---
 title: "The Class I Struggled to Teach"
 description: "A reflection on how a poster project changed the way I understood a class I struggled to teach."
-status: draft
+status: published
+publishedAt: 2026-08-12
 slug: the-class-i-struggled-to-teach
 language: en
 ---
