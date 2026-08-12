@@ -26,8 +26,10 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
               {dateFormatter.format(article.data.publishedAt!)}
             </time>
           </p>
-          <h2><a href={`/articles/${article.data.slug}/`}>{article.data.title}</a></h2>
-          <p>{article.data.description}</p>
+          <div>
+            <h2><a href={`/articles/${article.data.slug}/`}>{article.data.title}</a></h2>
+            <p>{article.data.description}</p>
+          </div>
         </li>
       ))}
     </ol>

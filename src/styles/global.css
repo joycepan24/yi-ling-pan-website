@@ -452,9 +452,12 @@ h3 {
   margin-top: 0.4rem;
 }
 
-.writing-index,
 .article {
   max-width: calc(var(--reading-width) + (var(--page-gutter) * 2));
+  padding-block: clamp(5rem, 12vw, 8rem);
+}
+
+.writing-index {
   padding-block: clamp(5rem, 12vw, 8rem);
 }
 
@@ -476,6 +479,7 @@ h3 {
 .article-list h2 {
   font-size: clamp(1.65rem, 4vw, 2.25rem);
   margin: 0.35rem 0 0.65rem;
+  max-width: none;
 }
 
 .article-list h2 a {
@@ -486,13 +490,14 @@ h3 {
   text-decoration: underline;
 }
 
-.article-list li > p:last-child,
+.article-list li > div > p,
 .article-description {
   color: var(--text-muted);
 }
 
-.article-list li > p:last-child {
+.article-list li > div > p {
   margin-bottom: 0;
+  max-width: 42rem;
 }
 
 .article-date {
@@ -580,6 +585,16 @@ h3 {
 
   .latest-writing__date {
     margin: 0.3rem 0 0;
+  }
+
+  .article-list li {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 9rem minmax(0, 1fr);
+  }
+
+  .article-list .article-date {
+    margin-top: 0.65rem;
   }
 }
 
