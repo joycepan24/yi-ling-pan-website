@@ -1,5 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const latestArticles = (await getCollection('articles', ({ data }) => data.status === 'published'))
+  .sort((a, b) => b.data.publishedAt!.valueOf() - a.data.publishedAt!.valueOf())
+  .slice(0, 3);
+
+const dateFormatter = new Intl.DateTimeFormat('en', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+});
 
 const focusAreas = [
   {
@@ -41,6 +51,29 @@ const focusAreas = [
           <p class="focus-number" aria-hidden="true">0{index + 1}</p>
           <h3>{area.title}</h3>
           <p>{area.description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="latest-writing site-shell" aria-labelledby="latest-writing-title">
+    <header class="latest-writing__header">
+      <h2 id="latest-writing-title">Latest Writing</h2>
+      <a href="/articles/">View all writing <span aria-hidden="true">→</span></a>
+    </header>
+
+    <ol class="latest-writing__list">
+      {latestArticles.map((article) => (
+        <li lang={article.data.language}>
+          <p class="latest-writing__date">
+            <time datetime={article.data.publishedAt!.toISOString()}>
+              {dateFormatter.format(article.data.publishedAt!)}
+            </time>
+          </p>
+          <div>
+            <h3><a href={`/articles/${article.data.slug}/`}>{article.data.title}</a></h3>
+            <p>{article.data.description}</p>
+          </div>
         </li>
       ))}
     </ol>

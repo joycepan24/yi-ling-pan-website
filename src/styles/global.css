@@ -305,6 +305,66 @@ h3 {
   padding-top: 0.25rem;
 }
 
+.latest-writing {
+  border-top: 1px solid var(--border);
+  padding-block: clamp(4.5rem, 10vw, 7rem);
+}
+
+.latest-writing__header {
+  align-items: baseline;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 2.25rem;
+}
+
+.latest-writing__header h2 {
+  margin: 0;
+}
+
+.latest-writing__header a {
+  color: var(--text-muted);
+  flex: none;
+  font-size: 0.92rem;
+}
+
+.latest-writing__list {
+  border-top: 1px solid var(--border);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.latest-writing__list li {
+  border-bottom: 1px solid var(--border);
+  padding-block: 1.75rem;
+}
+
+.latest-writing__date {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  margin-bottom: 0.55rem;
+}
+
+.latest-writing__list h3 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  margin: 0 0 0.65rem;
+}
+
+.latest-writing__list h3 a {
+  text-decoration: none;
+}
+
+.latest-writing__list h3 a:hover {
+  text-decoration: underline;
+}
+
+.latest-writing__list li > div > p {
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 42rem;
+}
+
 .prose {
   max-width: calc(var(--reading-width) + (var(--page-gutter) * 2));
   padding-block: clamp(5rem, 12vw, 8rem);
@@ -511,6 +571,16 @@ h3 {
   .focus-number {
     grid-row: auto;
   }
+
+  .latest-writing__list li {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 9rem minmax(0, 1fr);
+  }
+
+  .latest-writing__date {
+    margin: 0.3rem 0 0;
+  }
 }
 
 @media (max-width: 30rem) {
@@ -519,6 +589,12 @@ h3 {
     flex-direction: column;
     gap: 0.75rem;
     justify-content: center;
+  }
+
+  .latest-writing__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.85rem;
   }
 }
 
