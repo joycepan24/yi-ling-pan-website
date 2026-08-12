@@ -447,6 +447,7 @@ h3 {
 
 .article-body h2 {
   margin-bottom: 0;
+  max-width: none;
   padding-top: 1.75rem;
 }
 

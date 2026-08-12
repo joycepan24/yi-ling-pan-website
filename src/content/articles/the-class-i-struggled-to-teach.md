@@ -7,8 +7,6 @@ slug: the-class-i-struggled-to-teach
 language: en
 ---
 
-# The Class I Struggled to Teach
-
 There was one fifth-grade class that always gave me a headache.
 
 They loved talking with their friends. They were loud, playful, and sometimes threw things around the classroom. Even when I was explaining an activity, there were moments when so many students were talking that it was difficult to move forward.
