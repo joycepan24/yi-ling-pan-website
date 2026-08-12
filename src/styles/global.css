@@ -554,8 +554,9 @@ h3 {
 }
 
 .article-header h1 {
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-size: clamp(2.5rem, 7vw, 3.75rem);
   margin-top: 0.75rem;
+  max-width: none;
 }
 
 .article-description {

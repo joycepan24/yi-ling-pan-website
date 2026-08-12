@@ -7,8 +7,6 @@ slug: my-students-love-using-tablets
 language: en
 ---
 
-# My Students Love Using Tablets. I'm Not Sure I Do.
-
 My students love using tablets.
 
 Almost every time I walk into the classroom, someone asks:
