@@ -14,15 +14,15 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
 const focusAreas = [
   {
     title: 'Teaching Reflections',
-    description: 'Notes from the classroom and the questions that shape my practice.',
+    description: 'Classroom observations, teaching experiences, and questions that shape my practice.',
   },
   {
     title: 'Theory & Practice',
-    description: 'Connecting educational ideas with everyday teaching experience.',
+    description: 'Connecting ideas about pedagogy, language, and learning with classroom experience.',
   },
   {
     title: 'Teaching Resources',
-    description: 'Materials and ideas for learning and teaching.',
+    description: 'Materials, activities, and teaching ideas created, adapted, or used in the classroom.',
   },
 ];
 ---
@@ -49,7 +49,7 @@ const focusAreas = [
       {focusAreas.map((area, index) => (
         <li>
           <p class="focus-number" aria-hidden="true">0{index + 1}</p>
-          <h3>{area.title}</h3>
+          <h2>{area.title}</h2>
           <p>{area.description}</p>
         </li>
       ))}

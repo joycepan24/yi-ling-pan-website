@@ -285,13 +285,15 @@ h3 {
   background: var(--sage);
 }
 
-.focus-list h3,
+.focus-list h2,
 .focus-list li > p:last-child {
   grid-column: 2;
 }
 
-.focus-list h3 {
+.focus-list h2 {
+  font-size: 1.32rem;
   margin: 0;
+  max-width: none;
 }
 
 .focus-list li > p:last-child {
@@ -683,7 +685,7 @@ h3 {
     grid-template-columns: 4rem minmax(12rem, 0.65fr) minmax(16rem, 1fr);
   }
 
-  .focus-list h3,
+  .focus-list h2,
   .focus-list li > p:last-child {
     grid-column: auto;
     margin: 0;
