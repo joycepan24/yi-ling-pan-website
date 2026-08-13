@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import homepagePortrait from '../assets/images/homepage-portrait.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const latestArticles = (await getCollection('articles', ({ data }) => data.status === 'published'))
@@ -35,8 +37,8 @@ const focusAreas = [
     <p class="eyebrow">Bilingual educator</p>
     <h1 id="page-title">Helping learners bring language into everyday life.</h1>
     <figure class="intro-portrait">
-      <img
-        src="/images/homepage-portrait.jpg"
+      <Image
+        src={homepagePortrait}
         alt="Portrait of Yi Ling Pan seated outdoors."
         width="1536"
         height="2729"

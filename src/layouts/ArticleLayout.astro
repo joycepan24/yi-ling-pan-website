@@ -33,5 +33,11 @@ const dateFormatter = new Intl.DateTimeFormat(language, {
     <div class="article-body">
       <slot />
     </div>
+
+    <footer class="article-footer">
+      <nav aria-label="Article navigation">
+        <a href="/articles/"><span aria-hidden="true">←</span> Back to all writing</a>
+      </nav>
+    </footer>
   </article>
 </BaseLayout>
