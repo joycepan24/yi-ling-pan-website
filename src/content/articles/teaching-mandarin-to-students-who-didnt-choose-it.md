@@ -61,7 +61,7 @@ I wanted Mandarin to feel a little less unfamiliar. Maybe they would try saying 
 
 There were still classes where almost nobody seemed interested. But there were also small moments when someone joined in.
 
-I did not need students to suddenly love Mandarin. If someone left the classroom remembering one thing about Taiwan or one phrase they had learned, that already felt meaningful to me.
+If someone left the classroom remembering one thing about Taiwan or one phrase they had learned, that already felt meaningful to me.
 
 ## What Counts as Progress?
 
