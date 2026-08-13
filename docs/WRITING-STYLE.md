@@ -285,6 +285,17 @@ Ask:
 
 If it only repeats the meaning, remove it.
 
+Avoid restating the same reflection in slightly different words.
+
+During the final publication pass, read the full article specifically for repeated ideas across sections. A sentence may work well on its own but still be unnecessary if the same reflection has already been established elsewhere in the article.
+
+When repetition is found:
+
+- Prefer deleting the weaker or less necessary repetition.
+- Do not rewrite both passages simply to make them sound different.
+- Do not repeat a reflection because the reader may already understand it.
+- Preserve repetition only when the later passage genuinely develops, complicates, or changes the earlier idea.
+
 A paragraph does not always need a concluding sentence.
 
 A section does not always need a takeaway.
@@ -1010,6 +1021,13 @@ Do not predict every future writing situation now.
 ---
 
 # Final Editing Test
+
+Before an article is considered publication-ready, perform one full-article repetition pass checking for:
+
+- the same reflection stated more than once
+- conclusions that repeat an earlier conclusion
+- over-explanation of an idea the article has already established
+- similar sentences that survived from different rounds of editing
 
 Before delivering an edited article, ask:
 
