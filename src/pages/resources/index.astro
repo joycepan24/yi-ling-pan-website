@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import studentPoster from '../../assets/resources/taiwan-poster/student-work-food-grid.png';
+import lunchPadlet from '../../assets/images/resource-padlet-lunch-classroom.png';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const resources = [
+  {
+    number: '01',
+    type: 'Classroom activity',
+    title: 'A One-Period Taiwan Poster Activity',
+    href: '/resources/a-one-period-taiwan-poster-activity/',
+    metadata: ['Grade 5', '40 minutes', 'Language learning'],
+    image: studentPoster,
+    alt: 'Student poster introducing Taiwanese food through drawings of dumplings, beef noodles, bubble tea, and stinky tofu.',
+    imageClass: 'resources-entry__visual--poster',
+  },
+  {
+    number: '02',
+    type: 'Digital learning',
+    title: 'Using Padlet for Language Class',
+    href: '/resources/using-padlet-for-language-class/',
+    metadata: ['Language learning', 'Digital learning'],
+    image: lunchPadlet,
+    alt: 'Classroom Padlet showing Grade 3 lunch responses with complete English sentences and food images.',
+    imageClass: 'resources-entry__visual--padlet',
+  },
+];
+---
+
+<BaseLayout
+  title="Resources"
+  description="Practical classroom activities, tools, and examples for language teaching."
+>
+  <article class="resources-index">
+    <header class="resources-index__hero site-shell">
+      <p class="eyebrow">Resources</p>
+      <h1>Practical ideas from my classroom.</h1>
+      <p>Activities, tools, and examples for language teaching.</p>
+    </header>
+
+    <ol class="resources-collection">
+      {resources.map((resource, index) => (
+        <li class={`resources-entry resources-entry--${index + 1} site-shell`}>
+          <div class="resources-entry__copy">
+            <p class="resources-entry__kicker">{resource.number} · {resource.type}</p>
+            <h2>
+              <a href={resource.href}>
+                {resource.title}<span aria-hidden="true"> →</span>
+              </a>
+            </h2>
+            <ul class="resources-entry__meta" aria-label={`${resource.title} details`}>
+              {resource.metadata.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+
+          <a
+            class={`resources-entry__visual ${resource.imageClass}`}
+            href={resource.href}
+            aria-label={`View ${resource.title}`}
+          >
+            <figure>
+              <Image
+                src={resource.image}
+                alt={resource.alt}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 767px) 100vw, 600px"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </figure>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </article>
+</BaseLayout>

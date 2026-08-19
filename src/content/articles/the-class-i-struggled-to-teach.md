@@ -17,7 +17,7 @@ I had another class that was much quieter. Students knew when they needed to lis
 
 Naturally, I had a better impression of that class.
 
-Then I gave both classes the same poster project.
+Then I gave both classes the [same poster project](/resources/a-one-period-taiwan-poster-activity/).
 
 ## A Simple Project About Taiwan
 

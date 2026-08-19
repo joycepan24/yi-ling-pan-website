@@ -1,0 +1,187 @@
+---
+import { Image } from 'astro:assets';
+import studentWorkAnimals from '../../assets/resources/taiwan-poster/student-work-animals.png';
+import studentWorkClawMachine from '../../assets/resources/taiwan-poster/student-work-claw-machine.png';
+import studentWorkFoodGrid from '../../assets/resources/taiwan-poster/student-work-food-grid.png';
+import studentWorkScene from '../../assets/resources/taiwan-poster/student-work-scene.png';
+import studentWorkShip from '../../assets/resources/taiwan-poster/student-work-ship.png';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const studentWork = [
+  {
+    src: studentWorkFoodGrid,
+    className: 'food-grid',
+    alt: 'Student poster introducing four Taiwanese foods with separate drawings of dumplings, beef noodles, bubble tea, and stinky tofu.',
+  },
+  {
+    src: studentWorkAnimals,
+    className: 'animals',
+    alt: 'Student poster introducing animals through four drawings arranged freely across the page.',
+  },
+  {
+    src: studentWorkScene,
+    className: 'scene',
+    alt: 'Student poster combining Taiwanese food, people, a flag, and a landscape into a loosely connected scene.',
+  },
+  {
+    src: studentWorkClawMachine,
+    className: 'claw-machine',
+    alt: 'Student poster organizing food ideas around a large drawing of a claw machine.',
+  },
+  {
+    src: studentWorkShip,
+    className: 'ship',
+    alt: 'Student poster shaped as a ship, with Taiwanese food and landmarks drawn across its decks.',
+  },
+];
+---
+
+<BaseLayout
+  title="A One-Period Taiwan Poster Activity"
+  description="A classroom-tested Grade 5 poster activity and a revised scaffold for helping students complete it within one class period."
+>
+  <article class="resource-page">
+    <header class="resource-hero site-shell">
+      <p class="eyebrow">Teaching resource</p>
+      <h1>A One-Period Taiwan Poster Activity</h1>
+      <p class="resource-hero__intro">A simple scaffold that gives students a place to start.</p>
+      <ul class="resource-meta" aria-label="Activity details">
+        <li>Grade 5</li>
+        <li>40 minutes</li>
+        <li>A4 paper</li>
+      </ul>
+    </header>
+
+    <section class="resource-section resource-task site-shell" aria-labelledby="original-task-title">
+      <div class="resource-task__content">
+        <div class="resource-section__heading">
+          <p class="resource-kicker">Original task</p>
+          <h2 id="original-task-title">Introduce Taiwan in one poster.</h2>
+        </div>
+        <ol class="task-steps">
+          <li><span aria-hidden="true">1</span><p>Choose one theme about Taiwan.</p></li>
+          <li><span aria-hidden="true">2</span><p>Introduce four examples.</p></li>
+          <li><span aria-hidden="true">3</span><p>Create one poster in a 40-minute class.</p></li>
+        </ol>
+      </div>
+      <figure class="student-work student-work--food-grid">
+        <div class="student-work__image">
+          <Image src={studentWork[0].src} alt={studentWork[0].alt} widths={[360, 540, 720]} sizes="(max-width: 767px) 100vw, 390px" />
+          <span class="student-work__privacy-mask" aria-hidden="true"></span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="resource-section scaffold-section" aria-labelledby="scaffold-title">
+      <div class="site-shell scaffold-layout">
+        <div class="resource-section__heading">
+          <p class="resource-kicker">Core scaffold</p>
+          <h2 id="scaffold-title">Start with four ideas.</h2>
+          <p>Brainstorm four ideas around the chosen theme.</p>
+        </div>
+        <div class="scaffold-visual" aria-label="Four planning ideas on one sheet of A4 paper">
+          <div class="paper-plan" aria-hidden="true">
+            <span>1</span><span>2</span><span>3</span><span>4</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-section work-interpretations site-shell" aria-labelledby="interpretations-title">
+      <div class="work-interpretations__images">
+        <figure class="student-work student-work--animals">
+          <div class="student-work__image">
+            <Image src={studentWork[1].src} alt={studentWork[1].alt} widths={[360, 540, 720]} sizes="(max-width: 767px) 100vw, 330px" loading="lazy" decoding="async" />
+          </div>
+        </figure>
+        <figure class="student-work student-work--scene">
+          <div class="student-work__image">
+            <Image src={studentWork[2].src} alt={studentWork[2].alt} widths={[360, 540, 720]} sizes="(max-width: 767px) 100vw, 330px" loading="lazy" decoding="async" />
+            <span class="student-work__privacy-mask" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      <div class="work-interpretations__intro">
+        <p class="resource-kicker">Student interpretations</p>
+        <h2 id="interpretations-title">Students organized their ideas differently.</h2>
+      </div>
+    </section>
+
+    <section class="resource-section language-section site-shell" aria-labelledby="language-title">
+      <div class="language-section__content">
+        <div class="resource-section__heading">
+          <p class="resource-kicker">Language scaffold</p>
+          <h2 id="language-title">Build the word bank from their ideas.</h2>
+          <p>Add words as students need them.</p>
+        </div>
+        <div class="word-bank" aria-label="Example student-generated word bank">
+          <p class="word-bank__prompt">How do you say <span lang="zh-Hant">＿＿＿</span> in English?</p>
+          <ul>
+            <li>stinky tofu</li>
+            <li>bubble tea</li>
+            <li>beef noodles</li>
+            <li>oyster omelet</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="student-work student-work--claw-machine">
+        <div class="student-work__image">
+          <Image src={studentWork[3].src} alt={studentWork[3].alt} widths={[360, 540, 720]} sizes="(max-width: 767px) 100vw, 350px" loading="lazy" decoding="async" />
+          <span class="student-work__privacy-mask" aria-hidden="true"></span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="resource-section timing-section site-shell" aria-labelledby="timing-title">
+      <div class="timing-section__content">
+        <div class="resource-section__heading">
+          <p class="resource-kicker">40-minute flow</p>
+          <h2 id="timing-title">A 40-minute class</h2>
+          <p>A rough structure, not a fixed schedule.</p>
+        </div>
+        <ol class="lesson-timeline">
+          <li><span>Get ready</span><strong>about 10–12 min</strong><p>Brainstorm → <span class="lesson-timeline__phrase">word bank</span> → four ideas</p></li>
+          <li><span>Make</span><strong>about 25 min</strong><p>Complete four ideas → add details</p></li>
+          <li><span>Wrap up</span><strong>about 3 min</strong><p>Check → collect</p></li>
+        </ol>
+        <aside class="early-finisher-note" aria-label="For early finishers">
+          <p class="resource-kicker">For early finishers</p>
+          <p>Extend the task based on the student and the class.</p>
+        </aside>
+        <p class="related-reading">
+          <span>Related reading</span>
+          <a href="/articles/the-class-i-struggled-to-teach/">Read more about what happened in this classroom <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+      <figure class="student-work student-work--ship">
+        <div class="student-work__image">
+          <Image src={studentWork[4].src} alt={studentWork[4].alt} widths={[420, 630, 840]} sizes="(max-width: 767px) 100vw, 410px" loading="lazy" decoding="async" />
+          <span class="student-work__privacy-mask" aria-hidden="true"></span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="resource-section adapt-section site-shell" aria-labelledby="adapt-title">
+      <div class="adapt-section__intro resource-section__heading">
+        <p class="resource-kicker">Adapt it</p>
+        <h2 id="adapt-title">Try another place.</h2>
+        <p>Choose a place students know well.</p>
+      </div>
+      <figure class="adapt-diagram" aria-label="The activity can introduce different places students know well">
+        <p>A place students know well</p>
+        <ul>
+          <li>Their city</li>
+          <li>Their country</li>
+          <li>Their community</li>
+          <li>Another place</li>
+        </ul>
+      </figure>
+    </section>
+
+    <footer class="resource-footer site-shell">
+      <nav aria-label="Resource navigation">
+        <a href="/resources/"><span aria-hidden="true">←</span> Back to Resources</a>
+      </nav>
+    </footer>
+  </article>
+</BaseLayout>

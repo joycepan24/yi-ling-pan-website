@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import lunchClassroomScreenshot from '../../assets/images/resource-padlet-lunch-classroom.png';
+import freeTimeExampleScreenshot from '../../assets/images/resource-padlet-free-time-example.png';
+import actionPromptsScreenshot from '../../assets/images/resource-padlet-action-prompts.png';
+import readRespondScreenshot from '../../assets/images/resource-padlet-read-and-respond.png';
+
+const activityFlow = ['Read the prompt', 'write a complete sentence', 'add an image'];
+
+const teachingNotes = [
+  { id: 'A', title: 'Model one complete response.', detail: 'Sentence · spacing · punctuation' },
+  { id: 'B', title: 'Demonstrate the steps.', detail: 'Post · type · add an image' },
+  { id: 'C', title: 'Expect slower typing.', detail: 'Especially with younger learners.' },
+  { id: 'D', title: 'Keep the target language visible.' },
+];
+---
+
+<BaseLayout
+  title="Using Padlet for Language Class"
+  description="A teaching resource showing practical Padlet activities for language class."
+>
+  <article class="padlet-resource-page">
+    <header class="padlet-resource-hero site-shell">
+      <p class="eyebrow">Teaching resource</p>
+      <h1>Using Padlet for Language Class</h1>
+      <ul class="resource-meta" aria-label="Resource topics">
+        <li>Language learning</li>
+        <li>Digital learning</li>
+      </ul>
+    </header>
+
+    <section class="padlet-resource-section padlet-respond site-shell" aria-labelledby="padlet-respond-title">
+      <div class="padlet-section-copy">
+        <p class="resource-kicker">01 · Respond</p>
+        <h2 id="padlet-respond-title">Practice a target sentence.</h2>
+        <div class="padlet-language-example">
+          <p class="padlet-prompt">What do you want for lunch?</p>
+          <p>I want a hot dog.</p>
+          <p>I want some juice.</p>
+        </div>
+        <p class="padlet-activity-flow">
+          {activityFlow.map((step, index) => (
+            <><span>{step}</span>{index < activityFlow.length - 1 && <b aria-hidden="true">→</b>}</>
+          ))}
+        </p>
+        <p class="padlet-source">From my classroom · Grade 3 English</p>
+      </div>
+
+      <figure class="padlet-screenshot">
+        <Image
+          src={lunchClassroomScreenshot}
+          alt="Classroom Padlet showing Grade 3 lunch responses with complete English sentences and food images."
+          widths={[640, 960, 1280]}
+          sizes="(max-width: 767px) 100vw, 640px"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <section class="padlet-resource-section padlet-collect site-shell" aria-labelledby="padlet-collect-title">
+      <figure class="padlet-screenshot">
+        <Image
+          src={freeTimeExampleScreenshot}
+          alt="Example Padlet activity collecting short answers about free-time activities."
+          widths={[640, 960, 1280]}
+          sizes="(max-width: 767px) 100vw, 620px"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Free-time responses</figcaption>
+      </figure>
+
+      <div class="padlet-section-copy">
+        <p class="resource-kicker">02 · Collect ideas</p>
+        <h2 id="padlet-collect-title">Put everyone's answers in one place.</h2>
+        <p class="padlet-prompt">What do you like to do in your free time?</p>
+        <p class="padlet-process">Read <span aria-hidden="true">→</span> compare <span aria-hidden="true">→</span> discuss</p>
+      </div>
+    </section>
+
+    <section class="padlet-resource-section padlet-add-media site-shell" aria-labelledby="padlet-media-title">
+      <div class="padlet-section-copy">
+        <p class="resource-kicker">03 · Add media</p>
+        <h2 id="padlet-media-title">Use images as language prompts.</h2>
+        <div class="padlet-media-language">
+          <p class="padlet-prompt">What is the person doing?</p>
+          <p class="padlet-response">She is swimming.</p>
+        </div>
+      </div>
+
+      <figure class="padlet-screenshot">
+        <Image
+          src={actionPromptsScreenshot}
+          alt="Example Padlet with visual prompts for swimming, writing, and playing basketball."
+          widths={[640, 960, 1280]}
+          sizes="(max-width: 767px) 100vw, 640px"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Visual action prompts</figcaption>
+      </figure>
+    </section>
+
+    <section class="padlet-resource-section padlet-read-respond site-shell" aria-labelledby="padlet-read-title">
+      <figure class="padlet-screenshot padlet-screenshot--annotated">
+        <div class="padlet-annotated-image">
+          <Image
+            src={readRespondScreenshot}
+            alt="Example Padlet showing two original free-time responses with concise replies beneath them."
+            widths={[640, 960, 1280]}
+            sizes="(max-width: 767px) 100vw, 640px"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="padlet-annotation padlet-annotation--original" aria-label="First, read the original response">①</span>
+          <span class="padlet-annotation padlet-annotation--reply" aria-label="Second, read the reply">②</span>
+        </div>
+        <figcaption>Read and reply</figcaption>
+      </figure>
+
+      <div class="padlet-section-copy">
+        <p class="resource-kicker">04 · Read &amp; respond</p>
+        <h2 id="padlet-read-title">Continue from someone else's answer.</h2>
+        <p class="padlet-process">Read a response <span aria-hidden="true">→</span> reply</p>
+      </div>
+    </section>
+
+    <section class="padlet-before site-shell" aria-labelledby="padlet-before-title">
+      <h2 id="padlet-before-title">Before Students Begin</h2>
+      <ul>
+        {teachingNotes.map((note) => (
+          <li>
+            <span class="padlet-note-id" aria-hidden="true">{note.id}</span>
+            <strong>{note.title}</strong>
+            {note.detail && <span class="padlet-note-detail">{note.detail}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <footer class="resource-footer site-shell">
+      <nav aria-label="Resource navigation">
+        <a href="/resources/"><span aria-hidden="true">←</span> Back to Resources</a>
+      </nav>
+    </footer>
+  </article>
+</BaseLayout>

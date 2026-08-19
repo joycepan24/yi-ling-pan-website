@@ -6,33 +6,32 @@ This site should remain easy to publish, review, and evolve for at least two to 
 
 ## Chosen direction
 
-Use **Astro** with **Tailwind CSS** and **Markdown/MDX content collections**.
+Use **Astro** with **Tailwind CSS**. Articles use a Markdown content collection; current resource pages use bespoke Astro routes and a hand-curated resources index.
 
 | Need | Architectural response |
 | --- | --- |
-| Linkable articles and resources | One statically generated route per content item |
-| Content separate from code | Markdown/MDX files with schema-validated front matter |
-| Search visibility | Per-page metadata, canonical URLs, sitemap, robots rules, structured data where appropriate |
+| Linkable articles and resources | One statically generated route per item |
+| Article content separate from code | Markdown files with schema-validated front matter |
+| Current resource presentation | Bespoke Astro pages with page-specific layouts and imported assets |
+| Search visibility | Current per-page titles and descriptions; canonical URLs, sitemap, robots rules, and structured data when deployment/SEO work is approved |
 | Accessible, responsive experience | Semantic Astro components and responsive CSS; test keyboard and screen-reader-critical flows |
-| Downloads | Version-controlled public files referenced by content metadata |
+| Downloads | No current download workflow; future stable public files documented with their resource content |
 | Few scripts | Astro islands only when interaction genuinely requires JavaScript |
-| Dozens of entries | Collections, tags, filters, pagination or archives when needed |
+| Dozens of entries | Expand the article collection and add filtering, pagination, or archives only when needed |
 
 ## Why Astro
 
 Astro produces static HTML by default, supports Markdown and MDX naturally, and allows selective interactive components without making the entire website a JavaScript application. This fits a primarily editorial professional site better than preserving an unspecified React prototype.
 
-Tailwind CSS is proposed for consistent, maintainable styling through a small token-driven design system. It should be configured deliberately rather than used as an unstructured collection of one-off utility strings.
+Tailwind CSS supports the implemented token-driven design system. Keep its use deliberate rather than turning it into an unstructured collection of one-off utility strings.
 
 ## Content model
 
-The implementation should use Astro content collections (or their current supported equivalent) with schemas for at least:
+### Articles (current)
 
-- `articles` — essays, reflections, and professional writing
-- `resources` — teaching materials, downloadable files, and usage notes
-- `pages` — durable, editor-owned long-form pages when Markdown is preferable
+The `articles` collection contains essays, reflections, and professional writing in Markdown. Its schema validates the title, description, status, explicit stable slug, language, and relevant dates. It is the only current Astro content collection.
 
-Likely front matter shared across collections:
+Current article front matter:
 
 ```yaml
 title: ""
@@ -42,39 +41,40 @@ status: draft # draft | published | archived
 language: en # or an approved BCP 47 language tag
 publishedAt: null
 updatedAt: null
-tags: []
-featuredImage: null
+tags: [] # optional
 ```
 
-Resources should add fields such as `audience`, `format`, `download`, `license`, and `instructions`. Final schemas must be decided when representative real content is available; do not fabricate values just to fill examples.
+### Resources (current)
 
-## Proposed repository layout
+The resources index is a curated Astro page, and each resource has its own static Astro route and page-specific layout. This preserves the existing teaching-material presentations without forcing unrelated resources into a premature shared schema.
+
+There is no `resources` content collection, generic resource front matter, or empty resource-content directory today. Consider a simple Markdown system only when repeated real resource content establishes the metadata and layout it needs; record that decision before migrating existing pages.
+
+## Current repository layout
 
 ```text
 src/
+  assets/           # imported, optimized images and resource visuals
   components/       # reusable presentational and accessible UI pieces
-  content/          # Markdown/MDX collections only
-    articles/
-    resources/
-    pages/
+  content/
+    articles/       # current Markdown article entries
+  content.config.ts # current article collection schema
   layouts/          # shared page shells
-  pages/            # routes and route templates
-  styles/           # global styles, tokens, Tailwind entry points
-  content.config.*  # collection schemas
-public/
-  downloads/        # PDFs and educator-facing downloadable materials
-  images/           # static images that do not need image processing
+  pages/
+    resources/      # current bespoke resource routes
+  styles/           # global styles and visual tokens
+scripts/            # focused build-time validation
 docs/               # governance and maintenance documentation
 ```
 
-Use `src/assets/` for images imported and optimized by Astro, and `public/` for files that must retain a stable direct URL, particularly downloads.
+Use `src/assets/` for images imported and optimized by Astro. If stable downloadable files are added in the future, place them in an intentional public-asset location with stable filenames and document the workflow at that time.
 
 ## Routing and publishing
 
 - Articles should resolve to `/articles/<slug>/`.
-- Resources should resolve to `/resources/<slug>/` with a clearly labeled download link when applicable.
+- Current resource routes resolve to `/resources/<slug>/`; a download link is included only when the particular resource has a download.
 - Listing pages should be available at `/articles/` and `/resources/`; filtering or pagination can be introduced when volume warrants it.
-- Keep trailing-slash and canonical URL behavior consistent from the first deployment.
+- Keep trailing-slash URL behavior consistent. Canonical URL behavior will be added with the deployment/SEO work.
 - Published slugs are permanent URLs. If one changes, configure a redirect at the host and retain a documented migration note.
 - Published articles appear in production routes and normal article listings. Archived articles retain their production routes but are excluded from normal article listings. Drafts must never be included in production routes, feeds, sitemaps, or navigation.
 

@@ -17,7 +17,7 @@ This guide is for the site owner and collaborators. It explains how content shou
 Keep the publishing routine small enough to sustain. The minimum checklist is:
 
 - Write a useful title and one- to two-sentence description in plain language.
-- Set the publication status and date when publishing.
+- For an article, set the publication status and date when publishing.
 - Remove student names, identifiable work, and classroom details unless permission and privacy requirements are clear.
 - Publish in English unless a reviewed translation and a specific need for another language have been agreed.
 
@@ -36,7 +36,7 @@ Add tags, image alt text, sources, acknowledgements, or a reviewed translation w
 
 ## Resource checklist
 
-Each resource should include the article details above plus:
+Each current resource page should make the following information clear in its approved page content; these are not yet generic schema fields:
 
 - Intended audience, subject/level when relevant, and learning purpose
 - What is included and how to use it
@@ -46,7 +46,11 @@ Add license or reuse terms, accessibility notes, and a version/date when they ar
 
 Do not replace a published download at the same URL when a version difference matters to users. Publish a new version with a clear label, and keep or redirect the old file intentionally.
 
-## Markdown authoring
+## Current publishing workflow
+
+Articles are authored as Markdown files with validated front matter. The current resources index and resource pages are bespoke Astro pages, so do not assume that a new resource can be published by adding a Markdown file. A reusable resource-content system is a future decision, to be made when real resources show a repeated need.
+
+## Markdown authoring for articles
 
 Use ordinary paragraphs, `##` headings for main sections, bulleted lists for related items, and meaningful link text. Avoid starting headings with “Introduction” unless it conveys something useful. Do not use headings merely to make text large.
 
@@ -59,6 +63,18 @@ MDX should be used sparingly, only when an approved reusable component genuinely
 - Avoid scanned PDFs when a selectable-text version is possible.
 - Provide alt text based on the purpose of the image in the surrounding content.
 - Compress large files while preserving classroom print quality.
+
+## Media intake and review
+
+This is the canonical policy for adding or changing website media.
+
+- Keep the web-use source that the site needs. Do not add multiple unnecessary raw or exported versions of the same image; large editable originals not needed by the site may remain outside Git. Do not delete existing repository originals automatically.
+- Use the existing purpose-based `src/assets/` structure for new files: `classroom/` for classroom photography, `images/` for portraits and other personal imagery, `resources/<resource-slug>/` for resource media, and `articles/<article-slug>/` when an article needs its own media. Do not reorganize existing assets without a specific task.
+- Use descriptive, stable filenames for new imports, rather than camera names such as `IMG_0352.jpg`. Keep names short enough to scan while making the image's purpose clear.
+- Prepare a reasonable web-ready source while keeping enough resolution for Astro's responsive image processing. Avoid duplicate web exports when Astro can generate the needed variants.
+- Before publishing classroom photography or student-related media, explicitly review whether people, names, student work, screens, boards, badges, worksheets, or other personal information are identifiable. Decide whether cropping, masking, blur, another privacy treatment, or non-publication is appropriate. Repository presence does not prove consent or permission.
+- Preserve authentic documented experience. Practical crop, framing, exposure, color, background-cleanup, and privacy edits are allowed; do not fabricate classroom events or materially alter people.
+- Reuse existing approved assets when appropriate. Coding agents must not invent privacy or permission status, replace authentic photography with generated substitutes, bulk rename/compress/reorganize media, or delete apparently unused large files without a specific owner-approved task. Preserve approved image compositions unless asked to change them.
 
 ## Status and maintenance
 

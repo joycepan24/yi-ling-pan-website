@@ -2,35 +2,49 @@
 
 Long-term professional website for Yi Ling Pan, focused on bilingual/multilingual education, teaching practice, reflection, research interests, and shareable teaching resources.
 
-> This repository currently contains the project foundation only. It intentionally does not yet contain a website implementation or personal biography.
+The current static site includes Home, About, Writing, individual article routes, a Resources index, and two bespoke resource pages. Approved biography, article, resource, and classroom-photography content now lives in the repository alongside the implementation.
 
 ## Direction
 
-The planned stack is Astro + Tailwind CSS + Markdown/MDX content collections. It is static-first, accessible, SEO-ready, and designed to keep writing and teaching materials separate from application code. A database is not part of the initial architecture.
+The site uses Astro + Tailwind CSS. Articles are Markdown content entries with validated front matter; the current resource pages are bespoke Astro pages with their own layouts and assets. The site is static-first and designed to keep editorial content separate from presentation code. A database is not part of the current architecture.
 
 Read the project documentation before making changes:
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Brand foundation](docs/BRAND.md)
 - [Design system](docs/DESIGN-SYSTEM.md)
+- [Visual direction](docs/VISUAL-DIRECTION.md)
 - [Content guide](docs/CONTENT-GUIDE.md)
+- [Writing style](docs/WRITING-STYLE.md)
 - [Architecture decisions](docs/DECISIONS.md)
 - [AI collaboration instructions](AGENTS.md)
 
-## Planned site areas
+## Current site areas
 
-- About and teaching philosophy
-- Teaching experience and professional development
-- Articles and classroom reflections
-- Research interests
-- Teaching resources and downloadable materials
-- CV/resume and contact information
+- Home and About
+- Writing archive and individual article pages
+- Teaching resources and individual resource pages
+- Classroom and professional photography where it supports the content
 
-No personal facts or public claims should be added until Yi Ling Pan supplies or approves them.
+CV, contact, multilingual routing, downloadable materials, and deployment are not currently implemented. Do not add personal facts or public claims without Yi Ling Pan's approval.
 
-## Content-owner workflow (target)
+## Local development
 
-Once the implementation phase is complete, adding an article or teaching resource should mean creating a Markdown/MDX file, completing its front matter, and placing any downloadable file in the designated assets folder. The content guide will remain the non-technical reference for that workflow.
+```bash
+pnpm install
+pnpm dev
+```
+
+For a production check and local production preview:
+
+```bash
+pnpm build
+pnpm preview
+```
+
+## Content workflow
+
+Articles are authored as Markdown entries in `src/content/articles/` and validated by `src/content.config.ts`. The current resources index and resource pages are bespoke Astro pages, not a generic resource collection. Do not create a resource schema or migrate those pages until a repeated real-content need and an approved design are available.
 
 ## Working conventions
 
@@ -38,11 +52,4 @@ Once the implementation phase is complete, adding an article or teaching resourc
 - Review `docs/DECISIONS.md` before changing the architecture.
 - Prefer small, reviewable changes.
 - Validate builds and accessibility-impacting work before handoff.
-
-## Proposed implementation sequence
-
-1. Approve and scaffold the documented Astro architecture.
-2. Establish the content schema, sample placeholders, routes, metadata, and base layouts.
-3. Implement the visual system and responsive templates.
-4. Add Yi Ling Pan's approved content and teaching materials.
-5. Perform accessibility, SEO, performance, and cross-device review before launch.
+- Before changing the site, read `AGENTS.md`, the relevant documentation, and the existing implementation. The repository may contain uncommitted work; preserve unrelated changes.
