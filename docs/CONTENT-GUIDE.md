@@ -63,8 +63,10 @@ MDX should be used sparingly, only when an approved reusable component genuinely
 ## Status and maintenance
 
 - `draft`: private and excluded from the production site
-- `published`: public and indexed
-- `archived`: retained for record/history but clearly contextualized
+- `published`: public and currently active; included in normal article listings
+- `archived`: public at its existing URL but excluded from normal article listings; it has no archive notice or special visual treatment
+
+`archived` does not mean deleted or withdrawn. Removing an article for privacy, factual, or other reasons is a separate decision and should not use the `archived` status.
 
 Review core profile pages at least annually. Review resource links and downloads periodically. Correct errors transparently when the correction materially affects the content.
 

@@ -51,6 +51,14 @@ This log records consequential choices so Codex and Claude can work from the sam
 - **Decision:** Publish the CV as an accessible HTML core page. Do not create a downloadable PDF in the initial release; create one later only when a job application or other specific use requires it.
 - **Consequences:** The CV remains easy to update, link, and read on mobile devices. A later PDF should be derived from the reviewed HTML CV content so the two versions do not diverge.
 
+## ADR-007 — Archived articles retain their public URLs
+
+- **Date:** 2026-08-19
+- **Status:** Accepted — approved by the site owner
+- **Context:** A previously published article may no longer represent the site's current work, but existing readers may still rely on its URL.
+- **Decision:** Generate routes for both `published` and `archived` articles. Only `published` articles appear in normal article listings, including the homepage. Archived articles use the existing article layout without a notice or special visual treatment. Removal for privacy, factual, or other reasons is a separate decision and does not use `archived`.
+- **Consequences:** Archiving preserves stable URLs while keeping current listings representative. A deliberately removed article requires its own review and URL-handling decision.
+
 ## Initial-release scope notes
 
 - Include a helpful 404 (not found) page and one reusable social-sharing preview image.

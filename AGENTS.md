@@ -27,6 +27,8 @@ Codex is the primary implementation agent. Claude is primarily an architecture, 
 5. Validate proportionately (build, tests, linting, link checks, visual/accessibility checks when available).
 6. Report changed files, validation performed, limitations, and follow-up decisions.
 
+For implementation changes, run `pnpm check` before handoff unless the task cannot safely run it. It is the repository's canonical objective validation command.
+
 ## Content rules
 
 - When creating or editing website articles, follow `docs/WRITING-STYLE.md` as the source of truth for the author's writing voice.

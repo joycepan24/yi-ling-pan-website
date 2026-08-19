@@ -76,7 +76,7 @@ Use `src/assets/` for images imported and optimized by Astro, and `public/` for 
 - Listing pages should be available at `/articles/` and `/resources/`; filtering or pagination can be introduced when volume warrants it.
 - Keep trailing-slash and canonical URL behavior consistent from the first deployment.
 - Published slugs are permanent URLs. If one changes, configure a redirect at the host and retain a documented migration note.
-- Drafts must never be included in production routes, feeds, sitemaps, or navigation.
+- Published articles appear in production routes and normal article listings. Archived articles retain their production routes but are excluded from normal article listings. Drafts must never be included in production routes, feeds, sitemaps, or navigation.
 
 ## Multilingual approach
 

@@ -13,9 +13,9 @@ const articles = defineCollection({
     updatedAt: z.coerce.date().optional(),
     tags: z.array(z.string()).optional(),
   }).refine(
-    ({ status, publishedAt }) => status !== 'published' || publishedAt !== undefined,
+    ({ status, publishedAt }) => status === 'draft' || publishedAt !== undefined,
     {
-      message: 'Published articles require a publication date.',
+      message: 'Published and archived articles require a publication date.',
       path: ['publishedAt'],
     },
   ),
