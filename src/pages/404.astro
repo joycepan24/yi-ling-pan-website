@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found"
+  description="The requested page could not be found."
+>
+  <section class="not-found site-shell" aria-labelledby="page-title">
+    <p class="eyebrow">404</p>
+    <h1 id="page-title">Page not found.</h1>
+    <p>The page you are looking for could not be found.</p>
+    <nav class="not-found__links" aria-label="Helpful links">
+      <a href="/">Return to the homepage <span aria-hidden="true">→</span></a>
+      <a href="/articles/">Read the writing <span aria-hidden="true">→</span></a>
+    </nav>
+  </section>
+</BaseLayout>

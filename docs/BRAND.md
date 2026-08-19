@@ -45,4 +45,6 @@ The home page should orient visitors to current professional focus and offer cle
 
 Favor generous whitespace, excellent typography, restrained color, and images with pedagogical meaning. Photography and illustrations must be licensed or owned, include useful alternative text, and never reveal students or classroom-sensitive material without appropriate permission.
 
-The final palette, typefaces, and logo/wordmark decisions are intentionally deferred until content and visual references are supplied.
+## Current visual expression
+
+The implemented site uses the `YI-LING PAN` wordmark, a warm neutral base, near-black text, muted lavender/butter/sage accents, and an editorial serif paired with a highly readable sans-serif. See [Visual Direction](VISUAL-DIRECTION.md) for the approved visual system; revise it only through a focused, approved visual change.

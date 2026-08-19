@@ -91,11 +91,10 @@ Deployment should be a static host with HTTPS, redirects, deployment previews, a
 ## Boundaries
 
 - Do not store secrets in the repository.
-- Avoid contact-form backends until spam handling, privacy, and ownership are decided; a mailto link is an acceptable initial option.
+- Avoid contact-form backends until spam handling, privacy, and ownership are decided.
 - Avoid analytics until goals, consent/legal requirements, and data retention are agreed.
 - Add client-side search, filters, or interactive widgets only after proving static navigation is insufficient.
-- Publish the initial CV as an accessible HTML core page. A downloadable PDF is deferred until a specific application or other use requires one.
-- Include a helpful 404 page and one reusable social-sharing preview image in the initial release. RSS is deferred until a stable publishing rhythm is established.
+- A custom 404 page is implemented at `src/pages/404.astro` and generates `/404.html`. No CV route, contact method, downloadable-material workflow, canonical metadata, or social-sharing preview image is currently implemented. The CV and social-sharing preview remain deferred for the present public-site scope; the latter depends on final domain and share-metadata decisions. RSS remains deferred until a stable publishing rhythm is established.
 
 ## Quality gates
 

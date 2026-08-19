@@ -10,8 +10,9 @@ Build a durable, accessible, bilingual/multilingual educator website that can gr
 
 - Git history and the files in this repository are authoritative.
 - Read `README.md` and relevant files under `docs/` before proposing or making a change.
+- Inspect the existing routes, components, styles, and content that the task touches before changing them. Treat established compositions and bespoke layouts as intentional unless the owner asks to change them.
 - Do not invent personal facts: credentials, roles, employers, dates, publications, awards, research, contact details, or claims of impact.
-- Keep personal content in content files; keep presentation and behavior in application code.
+- Keep repeatable editorial content in content files and presentation and behavior in application code. Existing bespoke pages may contain approved page-specific content; do not relocate it solely to impose a generic abstraction.
 - Do not add a database, CMS, analytics provider, hosting dependency, or major framework without a documented decision in `docs/DECISIONS.md` and explicit user approval.
 
 ## Agent roles
@@ -32,15 +33,18 @@ For implementation changes, run `pnpm check` before handoff unless the task cann
 ## Content rules
 
 - When creating or editing website articles, follow `docs/WRITING-STYLE.md` as the source of truth for the author's writing voice.
-- Article and resource pages must be written in Markdown or MDX with validated front matter.
+- Articles use Markdown with validated front matter. Current resource pages are bespoke Astro pages; do not introduce a generic resource schema or migrate them without a documented decision and explicit approval.
 - Use stable, human-readable slugs. Do not change a published slug without preserving a redirect strategy.
 - Put downloadable files in the designated public asset location; use descriptive, stable filenames and add meaningful metadata in the corresponding content entry.
 - Draft content must be excluded from production publication by an explicit status/date rule.
 - Use plain language, meaningful headings, descriptive link text, and alt text that conveys the image's purpose.
+- Before adding or changing media, follow the canonical intake and privacy policy in `docs/CONTENT-GUIDE.md`.
 
 ## Visual workflow
 
 Before proposing or making visual or layout changes, read `docs/VISUAL-DIRECTION.md` and inspect the relevant existing layouts, components, and styles. Visual changes must follow the established design decisions, and a new visual system must not be introduced without discussion and explicit approval. Content remains the primary focus.
+
+Do not replace approved page-specific compositions with generic abstractions or refactor unrelated layouts while completing a focused task. Preserve the circular personal-portrait treatment and the editorial classroom-photography treatment where they are already part of an approved composition.
 
 Preserve:
 
@@ -62,7 +66,7 @@ Avoid:
 
 - Prefer static generation and standard HTML over client-side JavaScript.
 - Design mobile-first; preserve keyboard access, visible focus, semantic landmarks, color contrast, and reduced-motion preferences.
-- Every public page needs accurate title, description, canonical URL, and appropriate social metadata.
+- Every public page needs accurate title and description. Add canonical URLs and appropriate social metadata with the approved deployment/SEO work.
 - Do not add dependencies for a one-line problem. Prefer the stack's built-in features.
 - Keep generated files, credentials, machine-specific files, and build output out of version control.
 

@@ -25,7 +25,7 @@ shape: radius, border width, shadow levels
 motion: duration and easing, respecting prefers-reduced-motion
 ```
 
-Final palette and typography need an approved visual direction. Their selection must meet WCAG 2.2 AA contrast expectations for normal text, controls, and focus indicators.
+The current implementation uses an approved warm-neutral surface, near-black text, muted lavender/butter/sage accents, an editorial serif display face, and a readable sans-serif body face. See [Visual Direction](VISUAL-DIRECTION.md) for its use. Any refinement must meet WCAG 2.2 AA contrast expectations for normal text, controls, and focus indicators.
 
 ## Core components
 

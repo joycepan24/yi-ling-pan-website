@@ -23,7 +23,7 @@ Avoid corporate branding, startup landing-page patterns, generic blog templates,
 
 ## Organic Shape Language
 
-The homepage introduced a visual language of soft organic shapes, circular forms, overlapping forms, and muted pastel accents. These forms are part of the website's visual identity and may be expressed differently across pages rather than repeated as a fixed composition.
+The established visual identity uses three muted geometric circular forms in soft yellow, muted green, and soft purple. They are a recurring compositional language, not a logo, icon set, or a fixed template to copy onto every page. Their placement can vary by page while preserving the relationship between generous whitespace, large typography, and restrained color.
 
 The shapes can suggest connection, learning, memory, and creativity. Their role is compositional: they can establish page identity, balance whitespace, or create a meaningful relationship between content areas.
 
@@ -31,6 +31,7 @@ The shapes can suggest connection, learning, memory, and creativity. Their role 
 - Their placement, scale, and relationship to content should feel intentional.
 - They should not become random decoration or compete with the page's meaning.
 - Do not turn the shapes into a separate logo or icon system.
+- Keep forms behind or beside readable content; they must never reduce text contrast, obscure controls, or make a composition feel decorative by default.
 
 ## Color Usage
 
@@ -48,14 +49,16 @@ Images should support meaning and strengthen a visitor's understanding of the pe
 
 Appropriate uses include:
 
-- A personal portrait
-- Classroom experiences, with appropriate permission and privacy protection
+- A circular personal portrait where it supports the page's identity and context
+- Classroom experiences presented as rectangular editorial photography, with appropriate permission and privacy protection
 - Teaching materials
 - Educational moments
 - Cultural experiences
 - Meaningful visuals connected to an article
 
 Avoid stock photography, decorative thumbnails, and images added only to fill space. Images are optional and are not required for every page or article. When used, they must follow the site's accessibility, licensing, and privacy requirements.
+
+Preserve the authentic, natural character of approved photography. Do not turn classroom photographs into decorative circles, use heavy filters, or replace them with generic imagery merely to create visual consistency.
 
 ## Page-Specific Guidance
 
@@ -85,6 +88,10 @@ The site intentionally avoids:
 - Tag-heavy interfaces
 - Unnecessary icons
 - Crowded layouts
+
+## Motion and change discipline
+
+Motion, where it already exists, should remain restrained and support the reading experience; it must respect reduced-motion preferences. Make visual changes in small, reversible steps, and do not casually redesign approved visual compositions or replace bespoke layouts with generic components.
 
 ## Future Extensions
 

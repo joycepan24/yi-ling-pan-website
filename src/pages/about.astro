@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import aboutClassroom from '../assets/images/about-classroom.jpg';
+import aboutProfessionalPortrait from '../assets/images/about-professional-portrait-cutout-cropped.png';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -24,12 +24,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="about-visual__shape about-visual__shape--lavender" aria-hidden="true"></span>
         <span class="about-visual__shape about-visual__shape--sage" aria-hidden="true"></span>
         <span class="about-visual__shape about-visual__shape--butter" aria-hidden="true"></span>
-        <figure class="about-classroom">
+        <figure class="about-portrait">
           <Image
-            src={aboutClassroom}
-            alt="Yi Ling Pan teaching at the front of a classroom while students participate."
-            width="2400"
-            height="1800"
+            src={aboutProfessionalPortrait}
+            alt="Portrait of Yi Ling Pan."
+            width="480"
+            height="1058"
+            widths={[180, 240, 320, 480]}
+            sizes="(max-width: 1119px) 158px, 171px"
           />
         </figure>
       </div>

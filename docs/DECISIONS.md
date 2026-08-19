@@ -50,6 +50,7 @@ This log records consequential choices so Codex and Claude can work from the sam
 - **Context:** The site needs a professional CV that is easy for schools and employers to read, search, and keep current. A downloadable file has not been requested for the initial release.
 - **Decision:** Publish the CV as an accessible HTML core page. Do not create a downloadable PDF in the initial release; create one later only when a job application or other specific use requires it.
 - **Consequences:** The CV remains easy to update, link, and read on mobile devices. A later PDF should be derived from the reviewed HTML CV content so the two versions do not diverge.
+- **Current implementation status:** Deferred. No CV route is currently implemented or required for the present public-site scope.
 
 ## ADR-007 — Archived articles retain their public URLs
 
@@ -61,6 +62,7 @@ This log records consequential choices so Codex and Claude can work from the sam
 
 ## Initial-release scope notes
 
-- Include a helpful 404 (not found) page and one reusable social-sharing preview image.
+- The helpful 404 (not found) page is implemented at `/404.html`.
+- Defer a reusable social-sharing preview image until launch preparation, after final domain and share-metadata decisions are made.
 - Defer RSS until there is an established publication rhythm and enough public articles to make it useful.
 - Choose and record the deployment provider before the public launch; it is not required to begin implementation.

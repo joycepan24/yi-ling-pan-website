@@ -1,6 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import classroomFoodLesson from '../assets/classroom/IMG_0352.jpg';
+import classroomStudentInteraction from '../assets/classroom/IMG_0390.jpg';
+import classroomArtwork from '../assets/classroom/IMG_1439.jpg';
+import classroomWholeClass from '../assets/classroom/IMG_1495.jpg';
+import classroomLesson from '../assets/classroom/IMG_4277.jpg';
+import classroomStory from '../assets/classroom/IMG_5549.jpg';
+import homepageClassroom from '../assets/images/homepage-classroom.jpg';
 import homepagePortrait from '../assets/images/homepage-portrait.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -25,6 +32,43 @@ const focusAreas = [
   {
     title: 'Teaching Resources',
     description: 'Materials, activities, and teaching ideas created, adapted, or used in the classroom.',
+    resource: {
+      title: 'A One-Period Taiwan Poster Activity',
+      href: '/resources/',
+    },
+  },
+];
+
+const classroomMoments = [
+  {
+    src: classroomWholeClass,
+    alt: 'Yi Ling Pan reads to a classroom while students raise their hands.',
+    orientation: 'landscape',
+  },
+  {
+    src: classroomFoodLesson,
+    alt: 'Yi Ling Pan points to food photographs during a classroom lesson.',
+    orientation: 'portrait',
+  },
+  {
+    src: classroomStudentInteraction,
+    alt: 'Yi Ling Pan speaks with a student holding a food photograph.',
+    orientation: 'portrait',
+  },
+  {
+    src: classroomStory,
+    alt: 'Yi Ling Pan reads an illustrated book in front of a chalkboard.',
+    orientation: 'portrait',
+  },
+  {
+    src: classroomLesson,
+    alt: 'Yi Ling Pan leads a lesson while students watch from their desks.',
+    orientation: 'landscape',
+  },
+  {
+    src: classroomArtwork,
+    alt: 'A classroom group holds up colorful student artwork for a photograph.',
+    orientation: 'landscape',
   },
 ];
 ---
@@ -40,8 +84,8 @@ const focusAreas = [
       <Image
         src={homepagePortrait}
         alt="Portrait of Yi Ling Pan seated outdoors."
-        width="1536"
-        height="2729"
+        widths={[140, 172, 280, 344]}
+        sizes="(max-width: 22.75rem) 44vw, (max-width: 48rem) 160px, (max-width: 70rem) 140px, (max-width: 86rem) 12.5vw, 172px"
       />
     </figure>
   </section>
@@ -51,7 +95,9 @@ const focusAreas = [
       {focusAreas.map((area, index) => (
         <li>
           <p class="focus-number" aria-hidden="true">0{index + 1}</p>
-          <h2>{area.title}</h2>
+          <h2>
+            {area.resource ? <a href="/resources/">{area.title}</a> : area.title}
+          </h2>
           <p>{area.description}</p>
         </li>
       ))}
@@ -59,10 +105,21 @@ const focusAreas = [
   </section>
 
   <section class="latest-writing site-shell" aria-labelledby="latest-writing-title">
-    <header class="latest-writing__header">
-      <h2 id="latest-writing-title">Latest Writing</h2>
-      <a href="/articles/">View all writing <span aria-hidden="true">→</span></a>
-    </header>
+    <div class="latest-writing__feature">
+      <header class="latest-writing__header">
+        <h2 id="latest-writing-title">Latest Writing</h2>
+        <a href="/articles/">View all writing <span aria-hidden="true">→</span></a>
+      </header>
+
+      <figure class="latest-writing__image">
+        <Image
+          src={homepageClassroom}
+          alt="Yi Ling Pan leads a classroom activity while elementary students raise their arms."
+          widths={[256, 320, 512, 640, 800, 1024, 1280]}
+          sizes="(max-width: 25rem) calc(100vw - 4rem), (max-width: 48rem) calc(90vw - 1.5rem), 512px"
+        />
+      </figure>
+    </div>
 
     <ol class="latest-writing__list">
       {latestArticles.map((article) => (
@@ -79,5 +136,53 @@ const focusAreas = [
         </li>
       ))}
     </ol>
+  </section>
+
+  <section class="classroom-moments" aria-labelledby="classroom-moments-title">
+    <div class="classroom-moments__heading site-shell">
+      <h2 id="classroom-moments-title">A glimpse into the classroom.</h2>
+    </div>
+
+    <div
+      class="classroom-moments__strip"
+      aria-label="Classroom moments"
+      tabindex="0"
+    >
+      <div class="classroom-moments__track">
+        <div class="classroom-moments__sequence">
+          {classroomMoments.map((moment) => (
+            <figure class={`classroom-moments__photo classroom-moments__photo--${moment.orientation}`}>
+              <Image
+                src={moment.src}
+                alt={moment.alt}
+                widths={[240, 320, 480, 640]}
+                sizes="(max-width: 767px) 320px, 428px"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))}
+        </div>
+
+        <div class="classroom-moments__sequence" aria-hidden="true">
+          {classroomMoments.map((moment) => (
+            <figure class={`classroom-moments__photo classroom-moments__photo--${moment.orientation}`}>
+              <Image
+                src={moment.src}
+                alt=""
+                widths={[240, 320, 480, 640]}
+                sizes="(max-width: 767px) 320px, 428px"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="classroom-moments__closing site-shell">
+      <a href="/about/">More about me <span aria-hidden="true">⟶</span></a>
+    </div>
   </section>
 </BaseLayout>
