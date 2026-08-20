@@ -113,7 +113,7 @@ a:focus-visible {
 .intro {
   isolation: isolate;
   max-width: none;
-  min-height: clamp(30rem, 43vw, 39rem);
+  min-height: clamp(30rem, 43vw, 33.75rem);
   overflow: hidden;
   padding-block: clamp(4rem, 8vw, 6.25rem) clamp(4rem, 7vw, 5.5rem);
   position: relative;
@@ -1872,8 +1872,8 @@ main:has(> .resources-index) + .site-footer {
 
   .focus-list li {
     display: block;
-    min-height: 16rem;
-    padding-top: 7rem;
+    min-height: 12rem;
+    padding-top: 0.75rem;
   }
 
   .focus-list .focus-number {
@@ -1987,6 +1987,7 @@ main:has(> .resources-index) + .site-footer {
   }
 
   .latest-writing__header {
+    background: color-mix(in srgb, var(--butter) 80%, transparent);
     bottom: -1rem;
     left: 0;
     min-height: 0;
