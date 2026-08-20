@@ -5,6 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const articles = (await getCollection('articles', ({ data }) => data.status === 'published'))
   .sort((a, b) => b.data.publishedAt!.valueOf() - a.data.publishedAt!.valueOf());
 
+const [featuredArticle, ...archiveArticles] = articles;
+
 const dateFormatter = new Intl.DateTimeFormat('en', {
   dateStyle: 'long',
   timeZone: 'UTC',
@@ -21,8 +23,29 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
       <span class="writing-index__shape writing-index__shape--three" aria-hidden="true"></span>
     </header>
 
-    <ol class="article-list">
-      {articles.map((article) => (
+    {featuredArticle && (
+      <section
+        class="writing-featured"
+        aria-labelledby="featured-essay-title"
+        lang={featuredArticle.data.language}
+      >
+        <p class="article-date">
+          <time datetime={featuredArticle.data.publishedAt!.toISOString()}>
+            {dateFormatter.format(featuredArticle.data.publishedAt!)}
+          </time>
+        </p>
+        <h2 id="featured-essay-title">
+          <a href={`/articles/${featuredArticle.data.slug}/`}>{featuredArticle.data.title}</a>
+        </h2>
+        <p class="writing-featured__description">{featuredArticle.data.description}</p>
+        <a class="writing-featured__link" href={`/articles/${featuredArticle.data.slug}/`}>
+          Read essay <span aria-hidden="true">⟶</span>
+        </a>
+      </section>
+    )}
+
+    <ol class="article-list article-list--compact">
+      {archiveArticles.map((article) => (
         <li lang={article.data.language}>
           <p class="article-date">
             <time datetime={article.data.publishedAt!.toISOString()}>
@@ -36,5 +59,7 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
         </li>
       ))}
     </ol>
+
+    <div class="writing-index__closure" aria-hidden="true"></div>
   </section>
 </BaseLayout>

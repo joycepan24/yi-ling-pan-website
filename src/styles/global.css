@@ -765,7 +765,7 @@ main:has(> .classroom-moments) + .site-footer {
 }
 
 .writing-index {
-  padding-block: clamp(5rem, 12vw, 8rem);
+  padding-block: clamp(5rem, 12vw, 8rem) clamp(4rem, 8vw, 6rem);
   position: relative;
 }
 
@@ -813,6 +813,71 @@ main:has(> .classroom-moments) + .site-footer {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.writing-featured {
+  border-bottom: 1px solid var(--border);
+  padding: clamp(0.5rem, 2vw, 1rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.writing-featured h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0.65rem 0 1rem;
+  max-width: 18ch;
+}
+
+.writing-featured h2 a {
+  text-decoration: none;
+}
+
+.writing-featured h2 a:hover {
+  text-decoration: underline;
+}
+
+.writing-featured__description {
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  margin: 0;
+  max-width: 42rem;
+}
+
+.writing-featured__link {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+  min-height: 2.75rem;
+}
+
+.article-list--compact {
+  margin-top: 1.25rem;
+}
+
+.article-list--compact li {
+  padding-block: 1.4rem;
+}
+
+.article-list--compact li:first-child {
+  border-top: 0;
+}
+
+.article-list--compact h2 {
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.article-list--compact li > div > p {
+  max-width: 40rem;
+}
+
+.writing-index__closure {
+  border-top: 1px solid var(--border);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  width: clamp(4rem, 8vw, 6rem);
+}
+
+main:has(> .writing-index) + .site-footer {
+  margin-top: 0;
 }
 
 .article-list li {
