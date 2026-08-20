@@ -9,67 +9,83 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Learn about Yi Ling Pan's bilingual education background and teaching experience."
 >
   <article class="prose about-page site-shell">
-    <div class="about-opening">
-      <header class="page-heading">
-        <p class="eyebrow">About</p>
-        <h1>About</h1>
-      </header>
+    <div class="about-sticky-region">
+      <div class="about-opening">
+        <header class="page-heading">
+          <p class="eyebrow">About</p>
+          <h1>About</h1>
+        </header>
 
-      <div class="intro-copy">
-        <p>I am a bilingual educator. I have experience teaching English and Mandarin in Taiwan, Japan, and the United States.</p>
-        <p>I am interested in how language becomes part of everyday life, both inside and beyond the classroom. This website brings together teaching reflections, ideas, and resources from my experiences in bilingual education.</p>
+        <div class="intro-copy">
+          <p>I am a bilingual educator. I have experience teaching English and Mandarin in Taiwan, Japan, and the United States.</p>
+          <p>I am interested in how language becomes part of everyday life, both inside and beyond the classroom. This website brings together teaching reflections, ideas, and resources from my experiences in bilingual education.</p>
+        </div>
+
+        <div class="about-visual">
+          <span class="about-visual__shape about-visual__shape--lavender" aria-hidden="true"></span>
+          <span class="about-visual__shape about-visual__shape--sage" aria-hidden="true"></span>
+          <span class="about-visual__shape about-visual__shape--butter" aria-hidden="true"></span>
+          <figure class="about-portrait">
+            <Image
+              src={aboutProfessionalPortrait}
+              alt="Portrait of Yi Ling Pan."
+              width="480"
+              height="1058"
+              widths={[180, 240, 320, 480]}
+              sizes="(max-width: 1119px) 158px, 171px"
+            />
+          </figure>
+        </div>
       </div>
 
-      <div class="about-visual">
-        <span class="about-visual__shape about-visual__shape--lavender" aria-hidden="true"></span>
-        <span class="about-visual__shape about-visual__shape--sage" aria-hidden="true"></span>
-        <span class="about-visual__shape about-visual__shape--butter" aria-hidden="true"></span>
-        <figure class="about-portrait">
-          <Image
-            src={aboutProfessionalPortrait}
-            alt="Portrait of Yi Ling Pan."
-            width="480"
-            height="1058"
-            widths={[180, 240, 320, 480]}
-            sizes="(max-width: 1119px) 158px, 171px"
-          />
-        </figure>
-      </div>
+      <section class="about-section about-education" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <dl class="education-list">
+          <div>
+            <dt>The City College of New York, CUNY</dt>
+            <dd>Graduate student in Bilingual Childhood Education at City College of New York</dd>
+          </div>
+          <div>
+            <dt>National Taipei University of Education</dt>
+            <dd>B.A. in English Education</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="about-section about-teaching about-teaching--lead" aria-labelledby="experience-title">
+        <h2 id="experience-title">Teaching Experience</h2>
+        <div class="teaching-sequence">
+          <section class="experience-entry">
+            <p class="location">Taiwan</p>
+            <div>
+              <h3>English &amp; Bilingual Teacher</h3>
+              <p>Designed English and bilingual learning activities for elementary learners with different language needs.</p>
+            </div>
+          </section>
+        </div>
+      </section>
     </div>
 
-    <section class="about-section" aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
-      <dl class="experience-list">
-        <div>
-          <dt>The City College of New York, CUNY</dt>
-          <dd>Graduate student in Bilingual Childhood Education at City College of New York</dd>
-        </div>
-        <div>
-          <dt>National Taipei University of Education</dt>
-          <dd>B.A. in English Education</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section class="about-section" aria-labelledby="experience-title">
-      <h2 id="experience-title">Teaching Experience</h2>
-      <div class="experience-list">
-        <section>
-          <h3>English &amp; Bilingual Teacher</h3>
-          <p class="location">Taiwan</p>
-          <p>Designed English and bilingual learning activities for elementary learners with different language needs.</p>
-        </section>
-        <section>
-          <h3>Mandarin Language &amp; Culture Instructor</h3>
+    <div class="about-teaching about-teaching--continuation">
+      <div class="teaching-sequence">
+        <section class="experience-entry">
           <p class="location">United States</p>
-          <p>Led Taiwanese culture workshops and introductory Mandarin lessons for U.S. high school students.</p>
+          <div>
+            <h3>Mandarin Language &amp; Culture Instructor</h3>
+            <p>Led Taiwanese culture workshops and introductory Mandarin lessons for U.S. high school students.</p>
+          </div>
         </section>
-        <section>
-          <h3>English &amp; Homeroom Teacher</h3>
+
+        <section class="experience-entry">
           <p class="location">Japan</p>
-          <p>Taught English and Mandarin to K–9 multilingual learners and worked with families and school staff across languages.</p>
+          <div>
+            <h3>English &amp; Homeroom Teacher</h3>
+            <p>Taught English and Mandarin to K–9 multilingual learners and worked with families and school staff across languages.</p>
+          </div>
         </section>
       </div>
-    </section>
+
+      <div class="about-page__closure" aria-hidden="true"></div>
+    </div>
   </article>
 </BaseLayout>

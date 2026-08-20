@@ -608,6 +608,7 @@ main:has(> .classroom-moments) + .site-footer {
 
 .about-page {
   max-width: var(--content-width);
+  padding-bottom: clamp(4rem, 6vw, 5rem);
 }
 
 .about-opening .page-heading,
@@ -757,6 +758,84 @@ main:has(> .classroom-moments) + .site-footer {
 
 .experience-list .location {
   margin-top: 0.4rem;
+}
+
+.about-education,
+.about-teaching {
+  max-width: none;
+}
+
+.education-list {
+  border-top: 1px solid var(--border);
+  display: grid;
+  margin: 0;
+}
+
+.education-list > div {
+  border-bottom: 1px solid var(--border);
+  padding-block: 1.4rem;
+}
+
+.education-list dt,
+.experience-entry h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.education-list dd,
+.experience-entry div > p {
+  color: var(--text-muted);
+  margin: 0.35rem 0 0;
+}
+
+.teaching-sequence {
+  border-top: 1px solid var(--border);
+}
+
+.experience-entry {
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+  padding-block: 1.75rem;
+}
+
+.experience-entry .location {
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.about-teaching--lead .experience-entry .location {
+  color: color-mix(in srgb, var(--lavender) 55%, var(--text));
+}
+
+.about-teaching--continuation .experience-entry:nth-of-type(1) .location {
+  color: color-mix(in srgb, var(--sage) 55%, var(--text));
+}
+
+.about-teaching--continuation .experience-entry:nth-of-type(2) .location {
+  color: color-mix(in srgb, var(--butter) 50%, var(--text));
+}
+
+.experience-entry div {
+  max-width: 36rem;
+}
+
+.about-page__closure {
+  border-top: 1px solid var(--border);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  width: clamp(4rem, 8vw, 6rem);
+}
+
+main:has(> .about-page) + .site-footer {
+  margin-top: 0;
 }
 
 .article {
@@ -1971,11 +2050,15 @@ main:has(> .resources-index) + .site-footer {
 }
 
 @media (min-width: 70rem) {
-  .about-opening {
+  .about-sticky-region {
     column-gap: clamp(2rem, 5vw, 4rem);
     display: grid;
     grid-template-columns: minmax(0, 38rem) minmax(19rem, 1fr);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .about-opening {
+    display: contents;
   }
 
   .about-opening .page-heading,
@@ -1984,12 +2067,68 @@ main:has(> .resources-index) + .site-footer {
   }
 
   .about-visual {
+    align-self: start;
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1 / -1;
     margin: 2.5rem 0 0 auto;
     max-width: 24rem;
     width: 100%;
   }
+
+  .about-education {
+    grid-column: 1;
+  }
+
+  .about-education .education-list {
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-teaching--lead {
+    grid-column: 1;
+  }
+
+  .about-teaching .experience-entry {
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+  }
+
+  .experience-entry div {
+    max-width: 32rem;
+  }
+}
+
+@media (min-width: 70rem) {
+  .about-visual {
+    position: sticky;
+    top: clamp(5.5rem, 8vh, 7rem);
+  }
+}
+
+@media (min-width: 48rem) {
+  .education-list {
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-list > div {
+    padding: 1.4rem 0;
+  }
+
+  .experience-entry {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: minmax(7.5rem, 0.35fr) minmax(0, 1.65fr);
+    padding-block: 2rem;
+  }
+
+  .experience-entry .location {
+    margin: 0;
+  }
+
+  .about-teaching > h2 {
+    margin-bottom: 1.25rem;
+  }
+
 }
 
 @media (max-width: 30rem) {
