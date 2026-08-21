@@ -839,7 +839,7 @@ main:has(> .about-page) + .site-footer {
 }
 
 .article {
-  max-width: calc(var(--reading-width) + (var(--page-gutter) * 2));
+  max-width: calc(58rem + (var(--page-gutter) * 2));
   padding-block: clamp(5rem, 12vw, 8rem);
 }
 
@@ -1000,24 +1000,48 @@ main:has(> .writing-index) + .site-footer {
 
 .article-header {
   border-bottom: 1px solid var(--border);
-  margin-bottom: 3rem;
-  padding-bottom: 2.5rem;
+  display: grid;
+  gap: 2rem;
+  margin-bottom: clamp(3.5rem, 7vw, 5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.article-header__meta {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.article-header__meta .article-date {
+  line-height: 1.55;
+  max-width: 12rem;
 }
 
 .article-header h1 {
-  font-size: clamp(2.5rem, 7vw, 3.75rem);
-  margin-top: 0.75rem;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  margin: 0;
   max-width: none;
 }
 
 .article-description {
   font-size: 1.12rem;
-  margin: 1.35rem 0 1rem;
-  max-width: 38rem;
+  line-height: 1.65;
+  margin: 1.5rem 0 0;
+  max-width: 34rem;
+}
+
+.article-body,
+.article-footer {
+  margin-inline: auto;
+  max-width: var(--reading-width);
 }
 
 .article-body {
   font-size: 1.06rem;
+}
+
+.article-body > p:first-child {
+  font-size: 1.1rem;
 }
 
 .article-body > * + * {
@@ -1025,14 +1049,14 @@ main:has(> .writing-index) + .site-footer {
 }
 
 .article-body h2 {
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
   max-width: none;
-  padding-top: 1.75rem;
+  padding-top: 2.5rem;
 }
 
 .article-body h3 {
-  margin-bottom: 0;
-  padding-top: 1.25rem;
+  margin-bottom: 0.2rem;
+  padding-top: 1.75rem;
 }
 
 .article-body li + li {
@@ -1041,6 +1065,13 @@ main:has(> .writing-index) + .site-footer {
 
 .article-body code {
   font-size: 0.92em;
+}
+
+.article-body blockquote {
+  border-left: 1px solid var(--border);
+  color: var(--text-muted);
+  margin-inline: 0;
+  padding-left: 1.25rem;
 }
 
 .article-footer,
@@ -1054,6 +1085,10 @@ main:has(> .writing-index) + .site-footer {
 .resource-footer a {
   color: var(--text-muted);
   font-size: 0.92rem;
+}
+
+main:has(> .article) + .site-footer {
+  margin-top: 0;
 }
 
 .site-footer {
@@ -1988,6 +2023,20 @@ main:has(> .resources-index) + .site-footer {
 }
 
 @media (min-width: 48rem) {
+  .article-header {
+    column-gap: clamp(2.5rem, 5vw, 3.5rem);
+    grid-template-columns: minmax(8rem, 9rem) minmax(0, 1fr);
+  }
+
+  .article-header__title::before {
+    background: var(--lavender);
+    content: '';
+    display: block;
+    height: 0.4375rem;
+    margin-bottom: 1.75rem;
+    width: 6rem;
+  }
+
   .classroom-moments {
     --classroom-strip-edge: max(
       var(--page-gutter),

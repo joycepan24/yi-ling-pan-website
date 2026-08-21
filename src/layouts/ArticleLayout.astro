@@ -19,15 +19,19 @@ const dateFormatter = new Intl.DateTimeFormat(language, {
 <BaseLayout title={title} description={description}>
   <article class="article site-shell" lang={language}>
     <header class="article-header">
-      <p class="eyebrow"><a href="/articles/">Writing</a></p>
-      <h1>{title}</h1>
-      <p class="article-description">{description}</p>
-      <p class="article-date">
-        Published <time datetime={publishedAt.toISOString()}>{dateFormatter.format(publishedAt)}</time>
-        {updatedAt && (
-          <> · Updated <time datetime={updatedAt.toISOString()}>{dateFormatter.format(updatedAt)}</time></>
-        )}
-      </p>
+      <div class="article-header__meta">
+        <p class="eyebrow"><a href="/articles/">Writing</a></p>
+        <p class="article-date">
+          Published <time datetime={publishedAt.toISOString()}>{dateFormatter.format(publishedAt)}</time>
+          {updatedAt && (
+            <> · Updated <time datetime={updatedAt.toISOString()}>{dateFormatter.format(updatedAt)}</time></>
+          )}
+        </p>
+      </div>
+      <div class="article-header__title">
+        <h1>{title}</h1>
+        <p class="article-description">{description}</p>
+      </div>
     </header>
 
     <div class="article-body">
